@@ -1,0 +1,186 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+    <meta charset="UTF-8">
+    <title>情境：元旦作为全球性新年与重要传统节日</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            width: 1600px;
+            height: 900px;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            background-color: #ffffff;
+            color: #212121;
+        }
+        .slide-container {
+            width: 100%;
+            height: 100%;
+            padding: 40px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+                .page-title {
+            border-bottom: 3px solid #c62828;
+        }
+        .page-title h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #212121;
+            margin: 0 0 16px 0;
+            padding-bottom: 16px;
+            flex-shrink: 0;
+        }
+        .content-wrapper {
+            flex-grow: 1;
+            min-height: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #c62828;
+            margin: 0 0 16px 0;
+            display: flex;
+            align-items: center;
+        }
+        .section-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 24px;
+            background-color: #ff9800;
+            margin-right: 12px;
+            border-radius: 2px;
+        }
+        .section-content {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #212121;
+            margin: 0;
+        }
+        .section-content ul {
+            margin: 0;
+            padding-left: 24px;
+        }
+        .section-content li {
+            margin-bottom: 12px;
+        }
+        .section-content li:last-child {
+            margin-bottom: 0;
+        }
+        .highlight-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid #2e7d32;
+            padding: 20px;
+            border-radius: 0.5rem;
+            margin-top: 16px;
+        }
+        .highlight-box p {
+            margin: 0;
+            font-style: italic;
+            color: #666666;
+        }
+        .card-container {
+            display: flex;
+            gap: 24px;
+            flex-grow: 1;
+            min-height: 0;
+        }
+        .card {
+            flex: 1;
+            background-color: #ffffff;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            border-top: 6px solid;
+        }
+        .card-1 {
+            border-top-color: #c62828;
+        }
+        .card-2 {
+            border-top-color: #2e7d32;
+        }
+        .card-3 {
+            border-top-color: #ff9800;
+        }
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: inherit;
+        }
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 0 0 16px 0;
+            color: #212121;
+        }
+        .page-number {
+            position: absolute;
+            bottom: 40px;
+            right: 40px;
+            font-size: 0.875rem;
+            color: #666666;
+        }
+        .page-number p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="page-title"><h1>情境：元旦作为全球性新年与重要传统节日</h1></div>
+        
+        <div class="content-wrapper">
+            <div>
+                <h2 class="section-title">基本定义</h2>
+                <p class="section-content">
+                    元旦，即公历的1月1日，是世界多数国家通称的“新年”。“元”谓“始”，凡数之始称为“元”；“旦”谓“日”；“元旦”即“初始之日”，指每年公历新年的第一天。
+                </p>
+                <div class="highlight-box">
+                    <p>作为全球性节日，元旦标志着新一年的开始，是各国进行庆祝、总结与规划的重要时间节点。</p>
+                </div>
+            </div>
+
+            <div class="card-container">
+                <div class="card card-1">
+                    <div class="card-icon"><p>📜</p></div>
+                    <h3 class="card-title">历史起源</h3>
+                    <p class="section-content">
+                        元旦一词最早出现在《晋书》中：“颛帝以孟夏正月为元，其时正朔元旦之春”。这里的“颛帝”即传说中的三皇五帝之一——颛顼。历代皇朝均在元旦举行庆贺典仪祈祀等活动。
+                    </p>
+                </div>
+
+                <div class="card card-2">
+                    <div class="card-icon"><p>🎎</p></div>
+                    <h3 class="card-title">文化定义</h3>
+                    <p class="section-content">
+                        元旦是我国一个古老的节日，也是全年最重要的节日之一。它不仅是时间更替的标志，更承载着辞旧迎新、祈福纳祥的文化内涵，体现了中华民族对美好生活的向往。
+                    </p>
+                </div>
+
+                <div class="card card-3">
+                    <div class="card-icon"><p>🏮</p></div>
+                    <h3 class="card-title">传统习俗</h3>
+                    <ul class="section-content">
+                        <li><strong>祭祖祭神：</strong>表达对祖先的敬意与对未来的祈福。</li>
+                        <li><strong>贴春联、写福字：</strong>营造喜庆氛围，寄托美好愿望。</li>
+                        <li><strong>守岁、吃团圆饭：</strong>家庭团聚，共迎新年。</li>
+                        <li><strong>舞龙灯、社火等娱乐活动：</strong>民间欢庆，增添节日气氛。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-number">
+            <p>2 / 5</p>
+        </div>
+    </div>
+
+</body></html>

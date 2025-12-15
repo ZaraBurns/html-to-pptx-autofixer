@@ -1,0 +1,242 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+    <meta charset="UTF-8">
+    <title>冲突：传统节日与现代消费需求的碰撞与机遇</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            width: 1600px;
+            height: 900px;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            background-color: #ffffff;
+            color: #212121;
+        }
+        .slide-container {
+            width: 100%;
+            height: 100%;
+            padding: 40px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            gap: 24px;
+        }
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+                .page-title {
+            border-bottom: 3px solid #c62828;
+        }
+        .page-title h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #212121;
+            margin: 0;
+            padding-bottom: 16px;
+            flex-grow: 1;
+        }
+        .page-number {
+            font-size: 1rem;
+            color: #666666;
+            margin-left: 32px;
+            white-space: nowrap;
+        }
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            min-height: 0;
+            gap: 32px;
+        }
+        .key-points-section {
+            display: flex;
+            gap: 32px;
+            height: 180px;
+        }
+        .point-card {
+            flex: 1;
+            background-color: #f8f9fa;
+            border-radius: 0.5rem;
+            padding: 24px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid #c62828;
+            display: flex;
+            flex-direction: column;
+        }
+        .point-card:nth-child(2) {
+            border-left-color: #2e7d32;
+        }
+        .point-card:nth-child(3) {
+            border-left-color: #ff9800;
+        }
+        .point-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #212121;
+            margin: 0 0 12px 0;
+        }
+        .point-content {
+            font-size: 1rem;
+            color: #212121;
+            line-height: 1.6;
+            margin: 0;
+            flex-grow: 1;
+        }
+        .chart-section {
+            flex-grow: 1;
+            min-height: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        .chart-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #212121;
+            margin: 0 0 16px 0;
+            text-align: center;
+        }
+        .chart-container {
+            flex-grow: 1;
+            min-height: 0;
+            background-color: #ffffff;
+            border-radius: 0.5rem;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e0e0e0;
+            position: relative;
+        }
+        .placeholder {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        .footer-note {
+            font-size: 0.875rem;
+            color: #666666;
+            text-align: center;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="page-header">
+            <div class="page-title"><h1>冲突：传统节日与现代消费需求的碰撞与机遇</h1></div>
+            <div class="page-number"><p>3/5</p></div>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="key-points-section">
+                <div class="point-card">
+                    <h3 class="point-title">假期安排</h3>
+                    <p class="point-content">2026年元旦放假3天（1月1日至1月3日），为短途旅行、家庭聚会和新兴娱乐消费创造了时间窗口。</p>
+                </div>
+                <div class="point-card">
+                    <h3 class="point-title">旅游热度</h3>
+                    <p class="point-content">元旦旅游市场热度显著攀升，全国酒店预订量同比增长超过3倍，演唱会等大型活动成为核心驱动力。</p>
+                </div>
+                <div class="point-card">
+                    <h3 class="point-title">消费趋势</h3>
+                    <p class="point-content">跨年方式多元化，演唱会、烟花秀、主题乐园等体验式消费取代传统聚餐，成为年轻消费群体的首选。</p>
+                </div>
+            </div>
+
+            <div class="chart-section">
+                <p class="chart-title">2026年元旦热门城市酒店预订同比增长趋势（数据来源：去哪儿旅行、同程旅行报告）</p>
+                <div class="chart-container">
+                    <div class="placeholder" id="chart-placeholder-1">
+                        <canvas id="chart_canvas_1"></canvas>
+                    </div>
+                </div>
+                <p class="footer-note">注：南宁因大型演唱会带动，酒店预订量同比增长达17倍，凸显事件营销对节日消费的强劲拉动作用。</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('chart_canvas_1').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['广州', '南宁', '上海', '北京', '哈尔滨', '深圳', '南京', '重庆', '武汉', '郑州'],
+                    datasets: [{
+                        label: '2026年元旦热门城市酒店预订量同比增长倍数',
+                        data: [3.5, 17, 3.2, 3.1, 3.3, 3.0, 3.2, 3.1, 3.0, 3.0],
+                        backgroundColor: ['#C62828', '#1565C0', '#C62828', '#1565C0', '#C62828', '#1565C0', '#C62828', '#1565C0', '#C62828', '#1565C0'],
+                        borderColor: ['#B71C1C', '#0D47A1', '#B71C1C', '#0D47A1', '#B71C1C', '#0D47A1', '#B71C1C', '#0D47A1', '#B71C1C', '#0D47A1'],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    animation: false,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            labels: {
+                                color: '#212121',
+                                font: {
+                                    size: 14
+                                }
+                            }
+                        },
+                        title: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: '同比增长倍数',
+                                color: '#212121',
+                                font: {
+                                    size: 14,
+                                    weight: 'bold'
+                                }
+                            },
+                            ticks: {
+                                color: '#212121',
+                                font: {
+                                    size: 12
+                                }
+                            },
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.05)'
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: '热门城市',
+                                color: '#212121',
+                                font: {
+                                    size: 14,
+                                    weight: 'bold'
+                                }
+                            },
+                            ticks: {
+                                color: '#212121',
+                                font: {
+                                    size: 12
+                                }
+                            },
+                            grid: {
+                                display: false
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+
+</body></html>
